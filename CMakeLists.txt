@@ -25,7 +25,7 @@ find_package(serial REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 add_executable(subscriber src/subscriber.cpp)
-add_executable(roboteq-flw200_node src/roboteq-flw200.cpp src/roboteq-flw200_node.cpp) 
+add_executable(roboteq-flw200_node src/roboteq-flw200.cpp src/roboteq-flw200_node.cpp)
 target_include_directories(roboteq-flw200_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
@@ -36,9 +36,9 @@ ament_target_dependencies(roboteq-flw200_node
   rclcpp
   geometry_msgs
   serial)
-ament_target_dependencies(subscriber 
-  rclcpp 
-  std_msgs 
+ament_target_dependencies(subscriber
+  rclcpp
+  std_msgs
   geometry_msgs)
 
 install(TARGETS roboteq-flw200_node subscriber
