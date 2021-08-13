@@ -2,7 +2,7 @@
 
 #include <cstdio>
 #include <rclcpp/rclcpp.hpp>
-#include <roboteq-flw200_node/roboteq-flw200.hpp>
+#include <roboteq_flw200_node/roboteq_flw200.hpp>
 
 int main(int argc, char **argv)
 {

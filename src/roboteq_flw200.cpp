@@ -2,7 +2,7 @@
 #include <cmath>
 #include <iostream>
 #include <rcl_interfaces/msg/parameter.hpp>
-#include <roboteq-flw200_node/roboteq-flw200.hpp>
+#include <roboteq_flw200_node/roboteq_flw200.hpp>
 #include <string>
 #include <unistd.h>
 

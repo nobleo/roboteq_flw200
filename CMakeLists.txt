@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(roboteq-flw200_node)
+project(roboteq_flw200)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -25,14 +25,11 @@ find_package(serial REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 add_executable(subscriber src/subscriber.cpp)
-add_executable(roboteq-flw200_node src/roboteq-flw200.cpp src/roboteq-flw200_node.cpp)
-target_include_directories(roboteq-flw200_node PUBLIC
+add_executable(roboteq_flw200_node src/roboteq_flw200.cpp src/roboteq_flw200_node.cpp)
+target_include_directories(roboteq_flw200_node PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
-  target_include_directories(subscriber PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
-ament_target_dependencies(roboteq-flw200_node
+ament_target_dependencies(roboteq_flw200_node
   rclcpp
   geometry_msgs
   serial)
@@ -41,7 +38,7 @@ ament_target_dependencies(subscriber
   std_msgs
   geometry_msgs)
 
-install(TARGETS roboteq-flw200_node subscriber
+install(TARGETS roboteq_flw200_node subscriber
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
