@@ -1,10 +1,9 @@
+#include "geometry_msgs/msg/pose.hpp"
 #include <memory>
-
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
-#include "geometry_msgs/msg/pose.hpp"
-#include "geometry_msgs/msg/quaternion.hpp"
-#include "geometry_msgs/msg/point.hpp"
+
+
 using std::placeholders::_1;
 
 class MinimalSubscriber : public rclcpp::Node
