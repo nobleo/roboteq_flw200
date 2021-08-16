@@ -12,7 +12,7 @@ FlowSensor::FlowSensor(const std::string &name, rclcpp::NodeOptions const &optio
       baud_(9600)
 {
     create_parameter();
-    publisher_ = this->create_publisher<geometry_msgs::msg::Pose>("Optical_sensor_pose", 10);
+    publisher_ = this->create_publisher<geometry_msgs::msg::Pose>("odom", 10);
     serial_ptr_ = std::make_shared<serial::Serial>(port_, baud_, serial::Timeout::simpleTimeout(1000));
 
     RCLCPP_INFO(this->get_logger(), "%s is open(%d)", port_.c_str(), serial_ptr_->isOpen());
@@ -89,7 +89,7 @@ void FlowSensor::get_quaternions(float &x, float &y, float &z, float &w)
     }
     catch (const std::invalid_argument &ia)
     {
-        printf("invalid argument: %s\n", ia.what());
+        RCLCPP_INFO(this->get_logger(),"invalid argument: %s\n", ia.what());
     }
 }
 
@@ -133,7 +133,7 @@ void FlowSensor::get_position(float &x, float &y)
     }
     catch (const std::invalid_argument &ia)
     {
-        printf("invalid argument: %s\n", ia.what());
+        RCLCPP_INFO(this->get_logger(),"invalid argument: %s\n", ia.what());
     }
 }
 

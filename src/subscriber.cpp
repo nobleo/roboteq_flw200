@@ -12,7 +12,7 @@ public:
         : Node("minimal_subscriber")
     {
         subscription_ = this->create_subscription<geometry_msgs::msg::Pose>(
-            "Optical_sensor_pose", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
+            "odom", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
     }
 
 private:

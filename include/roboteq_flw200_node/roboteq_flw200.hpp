@@ -15,10 +15,9 @@ private:
     rclcpp::Publisher<geometry_msgs::msg::Pose>::SharedPtr publisher_;
     std::shared_ptr<serial::Serial> serial_ptr_;
     std::string port_;
-    int baud_;
+    uint baud_;
     uint8_t buffer_[2];
     std::thread thread_;
-    std::atomic<bool> canceled_;
 
     void get_quaternions(float &x, float &y, float &z, float &w);
     void get_position(float &x, float &y);
