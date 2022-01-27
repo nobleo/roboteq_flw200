@@ -13,6 +13,7 @@ public:
 
 private:
     rclcpp::Publisher<geometry_msgs::msg::Pose>::SharedPtr publisher_;
+    rclcpp::Node::OnSetParametersCallbackHandle::SharedPtr on_set_parameters_callback_handle_;
     std::shared_ptr<serial::Serial> serial_ptr_;
     std::string port_;
     uint baud_;

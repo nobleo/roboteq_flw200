@@ -159,7 +159,7 @@ void FlowSensor::create_parameter()
     port_ = declare_parameter<std::string>("port", "/dev/ttyS2");
     baud_ = declare_parameter<int>("baud", 9600);
 
-    set_on_parameters_set_callback(
+    on_set_parameters_callback_handle_ = this->add_on_set_parameters_callback(
         [this](std::vector<rclcpp::Parameter> parameters) -> rcl_interfaces::msg::SetParametersResult
         {
             auto result = rcl_interfaces::msg::SetParametersResult();
