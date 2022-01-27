@@ -156,7 +156,7 @@ void FlowSensor::parse()
 
 void FlowSensor::create_parameter()
 {
-    port_ = declare_parameter<std::string>("port", "/dev/ttyS2");
+    port_ = declare_parameter<std::string>("port", "/dev/ttyACM0");
     baud_ = declare_parameter<int>("baud", 9600);
 
     on_set_parameters_callback_handle_ = this->add_on_set_parameters_callback(
